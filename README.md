@@ -1,4 +1,4 @@
-### *SUBMISSION UPLOAD AUTOMATICALLY CLOSES AT THE END OF THE SESSION*
+### *Computing Project  1 (Music Visualiser)*
 
 ## Audio visualiser
 
