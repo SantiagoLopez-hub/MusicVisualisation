@@ -15,17 +15,16 @@ function setup() {
 	 createCanvas(windowWidth, windowHeight);
 	 background(0);
 	 controls = new ControlsAndInput();
-
+	 
 	 //instantiate the fft object
 	 fourier = new p5.FFT();
 
 	 //create a new visualisation container and add visualisations
 	 vis = new Visualisations();
-	 vis.add(new CirclePattern());
+	 vis.add(new CirclePattern()); 
 	 vis.add(new Spectrum());
 	 vis.add(new WavePattern());
 	 vis.add(new Needles());
-	 
 } 
 
 function draw() {
