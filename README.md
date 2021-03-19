@@ -22,6 +22,14 @@ a Fast Fourier Transform object. Take a look at its description in the
   values such as “bass” and “treble”, and leave `freq2` empty.
 
 
+
+
+# MENU to select 
+
+- Select any visualisation.
+
+  ![Menu](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/menu.gif)
+
 ## Quick Start
 
 There Many visualisation yet to come but now following is available.
