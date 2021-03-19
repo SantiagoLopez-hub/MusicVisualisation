@@ -21,3 +21,12 @@ a Fast Fourier Transform object. Take a look at its description in the
   can specify `freq1` as a number or p5.js provides strings for common
   values such as “bass” and “treble”, and leave `freq2` empty.
 
+
+## Quick Start
+
+There Many visualisation yet to come but now following is available.
+- Nature with rain drops with p5.FFTanalyze.
+  ![Nature Rain Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/nature.gif)
+- I want livereload or babel auto-compiling to improve my p5.js development experience. Go check `Collection`.
+- I just need a CLI command to easily initialize a new p5 project (with default p5.js libraries in it). Go check `Bundle`.
+
