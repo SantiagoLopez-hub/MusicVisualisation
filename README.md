@@ -56,3 +56,8 @@ There Many visualisation yet to come but now following is available.
 ### 1: Using MIC
   - User can get input from mic to view the visualisation
 
+### 1: Interactive User interface
+  - Going to implement the web interface using p5js Dom objects
+
+### 1: 1 or more 3D visealisation using WEBGL
+  - 3d visualisation using WEBGL p5js
