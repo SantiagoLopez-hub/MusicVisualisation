@@ -25,20 +25,29 @@ a Fast Fourier Transform object. Take a look at its description in the
 ## Quick Start
 
 There Many visualisation yet to come but now following is available.
+
 - Nature with rain drops with p5.FFTanalyze.
+
+
   ![Nature Rain Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/nature.gif)
 
 - Circle with high value Bubles p5.FFTanalyze.
+
+
   ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/circle.gif)
 
 
 
 - Wave with vertex p5.FFTanalyze.
+
+
   ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/wave.gif)
 
 
 
 - Spectrum  p5.FFTanalyze.
+
+
   ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/spectrum.gif)
 
 
