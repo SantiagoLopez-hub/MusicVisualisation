@@ -28,11 +28,9 @@ There Many visualisation yet to come but now following is available.
 
 - Nature with rain drops with p5.FFTanalyze.
 
-
   ![Nature Rain Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/nature.gif)
 
 - Circle with high value Bubles p5.FFTanalyze.
-
 
   ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/circle.gif)
 
@@ -50,4 +48,11 @@ There Many visualisation yet to come but now following is available.
 
   ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/spectrum.gif)
 
+
+## Upcoming implementation
+### 1: User Defined Music (SoundCloud API)
+  - User can search the song and play so user can view the music visualisation on any custom song
+
+### 1: Using MIC
+  - User can get input from mic to view the visualisation
 
