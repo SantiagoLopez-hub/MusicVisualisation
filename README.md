@@ -31,4 +31,10 @@ There Many visualisation yet to come but now following is available.
 - Circle with high value Bubles p5.FFTanalyze.
   ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/circle.gif)
 
+- Wave with vertex p5.FFTanalyze.
+  ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/wave.gif)
+
+- Spectrum  p5.FFTanalyze.
+  ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/spectrum.gif)
+
 
