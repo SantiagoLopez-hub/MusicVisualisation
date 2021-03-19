@@ -50,7 +50,7 @@ There Many visualisation yet to come but now following is available.
 
 - 3D Visualisation
 
-  /*   */
+  ![3D Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/Music_3D.png)
 
 ## Upcoming implementation
 ### 1: User Defined Music (SoundCloud API)
