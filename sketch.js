@@ -7,20 +7,25 @@ var sound = null;
 //variable for p5 fast fourier transform
 var fourier;
 
+var back1, back2;
+
 function preload() {
 	sound = loadSound('assets/stomper_reggae_bit.mp3');
+	back1 = loadImage("assets/bg1.jpg");
+	back2 = loadImage("assets/bg2.jpg");
 }
 
 function setup() {
 	 createCanvas(windowWidth, windowHeight);
 	 background(0);
 	 controls = new ControlsAndInput();
-	 
+
 	 //instantiate the fft object
 	 fourier = new p5.FFT();
 
 	 //create a new visualisation container and add visualisations
 	 vis = new Visualisations();
+	 vis.add(new Nature(back1,back2,sound)); 
 	 vis.add(new CirclePattern()); 
 	 vis.add(new Spectrum());
 	 vis.add(new WavePattern());
@@ -50,4 +55,5 @@ function windowResized() {
 	if (vis.selectedVisual.hasOwnProperty('onResize')) {
 		vis.selectedVisual.onResize();
 	}
+	
 }
