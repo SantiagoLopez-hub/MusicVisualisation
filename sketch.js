@@ -21,10 +21,12 @@ function setup() {
 
 	 //create a new visualisation container and add visualisations
 	 vis = new Visualisations();
+	 vis.add(new CirclePattern());
 	 vis.add(new Spectrum());
 	 vis.add(new WavePattern());
 	 vis.add(new Needles());
-}
+	 
+} 
 
 function draw() {
 	background(0);
