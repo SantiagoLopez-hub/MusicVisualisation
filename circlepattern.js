@@ -6,8 +6,10 @@ function CirclePattern(){
     this.vecColor = [];
     this.mass = 20.0; 
     this.draw = function(){
+
+        background(255);
         push();
-        
+
         noStroke();
         let colorA =  color(255, 204, 0);;
         let colorB = color(255, 0, 0);
