@@ -27,10 +27,11 @@ function setup() {
 	 vis = new Visualisations();
 	 vis.add(new Nature(back1,back2,sound)); 
 	 vis.add(new CirclePattern()); 
+	 vis.add(new WebglGraphics());
 	 vis.add(new Spectrum());
 	 vis.add(new WavePattern());
 	 vis.add(new Needles());
-} 
+}
 
 function draw() {
 	background(0);
@@ -55,5 +56,4 @@ function windowResized() {
 	if (vis.selectedVisual.hasOwnProperty('onResize')) {
 		vis.selectedVisual.onResize();
 	}
-	
 }

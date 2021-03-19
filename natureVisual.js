@@ -9,7 +9,6 @@ function Nature(bg1, bg2,sound) {
     this.band_width = windowWidth / this.fft_bins * 1.5;
     this.drops = [];
     this.back1.resize(windowWidth, 0);
-    
     for (var i = 0; i < 300; i++) {
 		this.drops[i] = new Drop();
 	}
