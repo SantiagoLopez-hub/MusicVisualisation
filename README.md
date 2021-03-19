@@ -21,9 +21,6 @@ a Fast Fourier Transform object. Take a look at its description in the
   can specify `freq1` as a number or p5.js provides strings for common
   values such as “bass” and “treble”, and leave `freq2` empty.
 
-
-
-
 # MENU to select 
 
 - Select any visualisation.
