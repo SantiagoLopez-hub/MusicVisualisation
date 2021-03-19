@@ -27,7 +27,7 @@ function setup() {
 	 vis = new Visualisations();
 	 vis.add(new Nature(back1,back2,sound)); 
 	 vis.add(new CirclePattern()); 
-	 vis.add(new WebglGraphics());
+	 //vis.add(new WebglGraphics());
 	 vis.add(new Spectrum());
 	 vis.add(new WavePattern());
 	 vis.add(new Needles());
