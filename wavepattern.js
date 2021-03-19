@@ -7,7 +7,7 @@ function WavePattern() {
 	this.draw = function() {
 		push();
 		noFill();
-		stroke(255, 0, 0);
+		stroke(255, 200, 0);
 		strokeWeight(2);
 
 		beginShape();
@@ -18,7 +18,6 @@ function WavePattern() {
 			//coordinates and make a new vertex at the point.
 			var x = map(i, 0, wave.length, 0, width);
 			var y = map(wave[i], -1, 1, 0, height);
-
 			vertex(x, y);
 		}
 
