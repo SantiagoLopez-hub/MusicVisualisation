@@ -47,12 +47,21 @@ There Many visualisation yet to come but now following is available.
 - Spectrum  p5.FFTanalyze.
 
   ![Circles bubble Visualisation](https://github.com/notadepapel/MusicVisualisation/blob/master/assets/spectrum.gif)
+
+- 3D Visualisation
+
+  /*   */
+
 ## Upcoming implementation
 ### 1: User Defined Music (SoundCloud API)
   - User can search the song and play so user can view the music visualisation on any custom song
-### 1: Using MIC
+### 2: Using MIC
   - User can get input from mic to view the visualisation
-### 1: Interactive User interface
+### 3: Interactive User interface
   - Going to implement the web interface using p5js Dom objects
-### 1: 1 or more 3D visealisation using WEBGL
+### 4: 1 or more 3D visualisation using WEBGL
   - 3d visualisation using WEBGL p5js
+  - Expand on the current 3D visualisation sketch, which will dynamically change colours based on the frequency provided
+    by the sound
+  - Create a recurring generative mechanism that will visualise sound frequencies in the sphere, altering the width of it
+    accordingly
