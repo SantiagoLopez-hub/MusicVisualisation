@@ -1,8 +1,20 @@
-html,
-body {
 
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 400;
+    color: #fff;
+    background: #000;
+    overflow:hidden;
+    font-size: 0.85rem;
     /*
   animation-duration: 5s;
   transition-timing-function: ease-in;
@@ -11,15 +23,12 @@ body {
     animation: fadeInLeft 1s ease-in;
 }
 
-html {
-    font-size: 10px;
+
+.music-vis-one{
+    color: #2376a5;
 }
 
-body {
-    margin: 2% 15%;
-    font-size: 1.6rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 
 body a {
     padding-left: 10%;
