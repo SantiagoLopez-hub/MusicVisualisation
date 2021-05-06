@@ -1,8 +1,3 @@
-//https://api.deezer.com/track/3135556
-//https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/3135556
-
-//console.log(encodeURIComponent('https://api.deezer.com/track/3135556'));
-
 //$.get("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/3135556", (res) => {
   // console.log(res);
 //  console.log(res.preview);
@@ -20,14 +15,15 @@
   // window.location.href = res.preview;
 //});
 
-var song,
-    userSearch,
-    buttonSearch;
-
 //$(document).ajaxError(function(){
 //  $("#title").text("Visit the page by clicking on the button below and accept, then come back to this page");
 //  $("#title").append('<br><br><a href="https://cors-anywhere.herokuapp.com/corsdemo">Click here</a>');
 //});
+
+var song,
+    userSearch,
+    buttonSearch,
+    stopButton;
 
 function setup(){
   userSearch = createInput();
@@ -37,10 +33,9 @@ function setup(){
   buttonSearch.position(userSearch.x + userSearch.width, userSearch.y);
   buttonSearch.mousePressed(search);
   
-//  $.get("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/3135556", (res) => {
-//    console.log(res.preview);
-//    song = loadSound(res.preview);
-//  });
+  stopButton = createButton("Stop");
+  stopButton.position(buttonSearch.x + buttonSearch.width, buttonSearch.y);
+  stopButton.mousePressed(stopSong);
 }
 
 function search(){
@@ -53,7 +48,7 @@ function search(){
   $.get("https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=" + userSearch.value(), (res) => {
     console.log(res.data);
     for(var i = 0; i < res.data.length; i++){
-      $("#searchResult").append('<button onclick="try{song.stop();}catch(error){} song = loadSound(this.value, playSong)" value="' + res.data[i].preview + '">' + res.data[i].title + ", " + res.data[i].artist.name + "</button><br>");
+      $("#searchResult").append('<button onclick="try{song.stop();}catch(error){} song = loadSound(this.value, playSong)" value="' + res.data[i].preview + '"><span class="songName">' + res.data[i].title + "</span><br>" + res.data[i].artist.name + "</button><br>");
     }
   });
 }
@@ -62,6 +57,14 @@ function playSong(){
   song.play();
 }
 
+function stopSong(){
+  try{
+    song.stop();
+  }
+  catch(error){
+    //No song is not playing
+  }
+}
 
 /*
 //global for the controls and input 

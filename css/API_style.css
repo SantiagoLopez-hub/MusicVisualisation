@@ -1,0 +1,24 @@
+#searchResult{
+  opacity: 0.8;
+}
+
+#searchResult button{
+  background-color: #fff;
+  width: 250px;
+  padding: 5px 0;
+  margin-bottom: 3px;
+  cursor: pointer;
+  transition: background 0.5s ease-out;
+  text-align: left;
+  border: solid 1px #D1D1D1;
+  color: #5C5C5C;
+}
+
+#searchResult button:hover{
+  background-color: #D6D6D6;
+}
+
+.songName{
+  font-size: 14pt;
+  color: black;
+}
