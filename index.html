@@ -1,40 +1,132 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="lib/p5.min.js"></script>
-    <script src="lib/p5.sound.min.js"></script>
-    
-    <script src="sketch.js"></script>
-    <script src="controlsAndInput.js"></script>
-    <script src="playbackButton.js"></script>
-    <script src="visualisations.js"></script>
+<html lang="en" class="no-js">
 
-    <script src="needles.js"></script>
-    <script src="wavepattern.js"></script>
-    <script src="spectrum.js"></script>
-    <script src="circlepattern.js"></script>
-    <script src="natureVisual.js"></script>
-    <script src="3d.js "></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Music Visualizers</title>
+	<meta name="description" content="This is the Computing Project of Music visualisations by Rahul Mohite" />
+	<meta name="keywords" content="visualizers, music, javascript, upload, music, line, web design" />
+	<meta name="author" content="Rahul Mohite"/>
+	<meta name="image" content="https://www.doc.gold.ac.uk/~rmohi002/computingproject/assets/descimg.png"/>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<meta property="og:title" content="Computing Project Music Visualizers">
+	<meta property="og:description" content="This is the Computing Project of Music visualisations by Rahul Mohite.">
+	<meta property="og:image" content="/assets/descimg.png">
+	<meta property="og:url" content="https://www.doc.gold.ac.uk/~rmohi002/computingproject/">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	document.documentElement.className = 'js';
+	</script>
+</head>
+
+<body id="music-body">
 
 
-    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
-  <style> body {padding: 0; margin: 0;} </style>
-  </head>
-  <body class="music-vis-one">
+	<div id="myOverlay" class="overlay">
+		<span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+		<div class="overlay-content" id="searchform">
+		  <form >
+		  </form>
+		</div>
 
-    
-    <div id="puzzle_canvas_id"></div>
-    <button id="popup-modal" onclick="myFunction()" style="display:none; position:fixed; top:20%; left:20%; width:20%; height: 10%; padding-bottom:50px; border-style:solid; border-width:1px; border-color:#999; border-radius:10px; background-color:#fff; z-index:9999">';
-    <p >Go to 3d Visualisation</p>
 
-    </div>
+		<h1 id="title"></h1>
+		<div>
+		<br>
+		<ul id="searchResult"></ul>
+		</div>
 
-    <script>
-     function myFunction() {
-      window.location.href = "3dsketch";
-     }
-    </script>
-  </body>
+	</div>
+
+
+	<svg class="hidden">
+		<symbol id="icon-arrow" viewBox="0 0 24 24">
+			<title>arrow</title>
+			<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+		</symbol>
+		<symbol id="icon-drop" viewBox="0 0 24 24">
+			<title>drop</title>
+			<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+			<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+		</symbol>
+	</svg>
+	<main class="site-wrapper">
+		<header class="codrops-header" id="header">
+			<!-- <div class="codrops-links">
+				<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Tutorials/PiecesSlider/" title="Previous Demo">
+					<svg class="icon icon--arrow">
+						<use xlink:href="#icon-arrow"></use>
+					</svg>
+				</a>
+				<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=33934" title="Back to the article">
+					<svg class="icon icon--drop">
+						<use xlink:href="#icon-drop"></use>
+					</svg>
+				</a>
+			</div> -->
+
+			
+			<h1 class="codrops-header__title">Computing Project Music Visualizers</h1>
+
+
+			
+
+
+			<nav class="demos" id="demos">
+			</nav>
+
+
+			
+			
+
+		</header>
+		<div class="content main">
+			<div class="canvas-wrapper">
+				<div id="p5_loading" class="p5_loading">
+					<div class="p5_loading__inner">
+						<span></span>
+					</div>
+				</div>
+				<div id="uploading-animation" class="p5_loading">
+					<div class="p5_loading__inner">
+						<span></span>
+					</div>
+				</div>
+				<canvas id="webglcanvas"></canvas>	
+			</div>
+		</div>
+	</main>
+
+
+
+	<script>
+		function closeSearch() {
+		  document.getElementById("myOverlay").style.display = "none";
+		}
+	</script>
+
+	<script src="lib/p5.min.js"></script>
+	<script src="lib/p5.sound.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script> -->
+	<script src="js/sketch.js"></script>
+	<script src="js/musicVisualLine.js"></script>
+	<script src="js/musicVisualiCircle.js"></script>
+	<script src="js/particleWave.js"></script>
+	<script src="js/rectParticles.js"></script>
+	<script src="js/triangleWave.js"></script>
+	<script src="js/circlePattern.js"></script>
+	<script src="js/visualisations.js"></script>
+	<script src="js/controlsAndInput.js"></script>
+	<script src="js/playbackButtons.js"></script>
+	<script src="js/natureVisualise.js"></script>
+
+
+	
+</body>
 
 </html>

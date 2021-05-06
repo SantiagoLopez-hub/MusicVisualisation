@@ -1,98 +1,456 @@
 
+
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400');
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+
 
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
-
 
 body {
-    font-family: 'Roboto', 'sans-serif';
-    font-weight: 400;
-    color: #fff;
-    background: #000;
-    overflow:hidden;
-    font-size: 0.85rem;
-    /*
-  animation-duration: 5s;
-  transition-timing-function: ease-in;
-  animation-fill-mode: both;
-*/
-    animation: fadeInLeft 1s ease-in;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #fff;
+	background: #000;
+	overflow: hidden;
+	font-size: 0.85rem;
 }
 
 
-.music-vis-one{
-    color: #2376a5;
+a {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #333;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
 }
 
 
 
-body a {
-    padding-left: 10%;
-    padding-right: 20px;
-    font-size: 2rem;
-    text-decoration: none;  
+/* Icons */
+.icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+/* Header */
+.codrops-header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	padding: 2vmax;
+	z-index: 1;
+}
+
+.codrops-header__title {
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0 1em;
+	color: #fff;
+}
+
+.codrops-header__tagline {
+	margin: 0;
+}
+
+/* Top Navigation Style */
+.codrops-links {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.codrops-icon {
+	display: inline-block;
+	margin: 0.25em;
+	padding: 0.25em;
+}
+
+/* Demo links */
+.demos {
+	margin: 0 0 0 3rem;
+}
+
+.demo {
+	margin: 0 1em 0.5em 0;
+	padding: 0 0 0.25em;
+}
+
+.demo:hover,
+.demo--current {
+	color: #fff;
+}
+
+/* Content */
+.content {
+	padding: 3em 0;
+}
+
+.content.main {
+	min-height: 100vh; 
+	padding: 0;
+}
+
+.canvas-wrapper {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
 }
 
 canvas {
-        display: 50%;
-       float: left;
-        vertical-align: top;
-        padding: 0.5rem 0.5rem;
-        margin: 0.5rem 0.5rem;
-        border: 1px double black;   
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%; 
+}
+
+.p5_loading {
+	background: black;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgb(0, 0, 0);
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	overflow: hidden;
+}
+
+.p5_loading__inner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);  
+	display: flex;
+}
+
+.p5_loading__inner span {
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	background: rgb(255, 255, 255);
+	margin: 0 20px;
+	transform-origin: center;
+	animation: noiseLoad 0.5s infinite ease-in-out alternate;
+}
+
+.p5_loading__inner span:nth-child(2) {
+	animation-delay: 0.33s;
+}
+
+.p5_loading__inner span:nth-child(3) {
+	animation-delay: 0.66s;
+}
+
+@keyframes noiseLoad {
+	from {
+		transform: scale(0);
+		background: rgb(255, 255, 255);
+	}
+	
+	to {
+		transform: scale(1);
+		background: rgb(0, 0, 0);
+		
+	}
 }
 
 
-/*
- * Keyframes
- */
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+#uploading-animation {
+	display: none;
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
+#uploading-animation.is-visible {
+	display: block;
+	z-index: 150;
 }
 
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translate3d(100%, 0, 0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
+.upload-btn::before,
+.toggle-btn {
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: currentColor;
+	position: absolute;
+	bottom: 2vmax;   
+	border: 1px solid;
+	width: 255px;
 }
 
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translate3d(-10%, 0, 0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
+.upload-btn::before {
+	content: 'Upload your track';
+	display: inline-block;  
+	left: 2vmax;
+	outline: none;
+	white-space: nowrap;
+	user-select: none;
+	cursor: pointer;
 }
+
+.upload-btn:hover::before {
+	color: #fff;
+}
+
+.toggle-btn {
+	background: transparent;
+	color: currentColor;
+	right: 2vmax;
+}
+
+.toggle-btn:focus {
+	outline: none;
+}
+
+.toggle-btn:hover {
+	color: #fff;
+}
+
+.searchButton {
+	margin-left: 1rem;
+	cursor: pointer;
+}
+
+.musicVol{
+	/* position: absolute; */
+    /* bottom: 2vmax; */
+	padding: 10px;
+	color: currentColor;
+	position: absolute;
+	width: 300px;
+	bottom: 2vmax;
+	left: 37%;
+	height: 20px;
+	/* background-color: #2ecc71; */
+	background: transparent;
+	display: block;
+}
+
+
+
+
+
+/* Search OverLay */
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	display: none;
+	position: fixed;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, 0.678);
+
+  }
+
+  .overlay-content {
+	position: relative;
+	top: 46%;
+	width: 50%;
+	text-align: center;
+	margin-top: 30px;
+	margin: auto;
+  }
+  
+  .overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+	cursor: pointer;
+	color: white;
+  }
+  
+  .overlay .closebtn:hover {
+	color: #ccc;
+  }
+  
+  .overlay input[type=text] {
+	padding: 15px;
+	font-size: 17px;
+	border: none;
+	float: left;
+	width: 80%;
+	background: white;
+  }
+  
+  .overlay input[type=text]:hover {
+	background: #f1f1f1;
+  }
+  
+  .overlay button {
+	float: left;
+	width: 20%;
+	padding: 15px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+  }
+  
+  .overlay button:hover {
+	background: #bbb;
+  }
+
+
+
+
+
+
+@media screen and (max-width: 55em) {
+	.codrops-header {
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+	.demos {
+		width: 100%;
+		margin: 1em 0 0;
+		text-align: center;
+	}
+	.toggle-btn {
+		right: 10px;
+		bottom: 5.5em;
+		width: calc(100% - 20px);
+	}
+	.upload-btn::before {
+		position: absolute;
+		bottom: 9em;
+		left: 10px;
+		width: calc(100% - 20px);
+	}
+	.musicVol{
+		left: 20%;
+		width: 60%;
+	}
+
+	.searchButton {
+		margin-left: 0;
+		cursor: pointer;
+	}
+
+
+
+	.overlay {
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.616);
+	}
+}
+
+
+@media screen and (max-width: 430px) {
+	.demos {
+		width: 100%;
+		margin: 1em 0 0;
+		text-align: center;
+		display: inline-grid;
+	}
+	.musicVol{
+		left: 20%;
+		width: 60%;
+	}
+}
+
+@media(min-width: 880px) {
+	
+	.musicVol{
+		left: 40%;
+		width: 20%;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+#player {
+	width: 350px;
+	height: 50px;
+	position: relative;
+	margin: 0 auto;
+	top: 80px;
+}
+#player i {
+	position: absolute;
+	margin-top: -6px;
+	color: #666;
+}
+#player i.fa-volume-down {
+	margin-left: -8px;
+}
+#player i.fa-volume-up {
+	margin-right: -8px;
+	right: 0;
+}
+#volume {
+	position: absolute;
+	left: 24px;
+	margin: 0 auto;
+	height: 5px;
+	width: 300px;
+	background: #555;
+	border-radius: 15px;
+}
+#volume .ui-slider-range-min {
+	height: 5px;
+	width: 300px;
+	position: absolute;
+	background: #2ecc71;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+}
+#volume .ui-slider-handle {
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background: #fff;
+	position: absolute;
+	margin-left: -8px;
+	margin-top: -8px;
+	cursor: pointer;
+	outline: none;
+}
+
+
+

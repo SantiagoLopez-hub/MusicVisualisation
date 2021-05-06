@@ -1,20 +1,35 @@
 function CirclePattern(){
-    this.name = "circle";
+
+    this.name = "Bubbles Pattern";
+    this.musicVisualelement = createA("#", this.name);
+    this.musicVisualelement.parent('demos');
+    this.musicVisualelement.addClass('demo');
+
     this.vecLocation = [];
     this.vecVelocity = [];
     this.vecDiameter = [];
     this.vecColor = [];
     this.mass = 20.0; 
+
+
+    this.colorPalette = ["#05668D", "rgba(22, 59, 72, 0.5)", "#00a6e0", "#002a38"];
+    this.musicBody = select('#music-body');
+
+
+    this.musicBodyColor = "#02C39A";
+    
     this.draw = function(){
 
-        background(255);
+        // this.musicBody.style('color', "#02C39A");
+        // this.musicVisualelement.style('color', "#fff")
+        background(this.colorPalette[0]);
         push();
 
         noStroke();
-        let colorA =  color(255, 204, 0);;
+        let colorA =  color(255, 204, 0);
         let colorB = color(255, 0, 0);
 
-        var spectrum = fourier.analyze();
+        var spectrum = fft.analyze();
         let vol = Math.max.apply(null, spectrum);
         for (i = 0; i < spectrum.length; i++) {
             var h = map(log(i), 0, log(spectrum.length), 0, 128);
@@ -48,12 +63,6 @@ function CirclePattern(){
                 fill(this.vecColor[i].x,this.vecColor[i].y, this.vecColor[i].z, 50);
                 ellipse(this.vecLocation[i].x, this.vecLocation[i].y, this.vecDiameter[i].x, this.vecDiameter[i].x);
                 if(this.vecLocation[i].x < 0 || this.vecLocation[i].x > width){
-                        this.vecLocation.splice(i, 1);
-                        this.vecVelocity.splice(i, 1);
-                        this.vecDiameter.splice(i, 1);
-                        this.vecColor.splice(i, 1);
-                }
-                if(this.vecLocation[i].y < 0 || this.vecLocation[i].y > height){
                         this.vecLocation.splice(i, 1);
                         this.vecVelocity.splice(i, 1);
                         this.vecDiameter.splice(i, 1);
