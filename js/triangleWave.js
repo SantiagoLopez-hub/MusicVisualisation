@@ -1,22 +1,29 @@
+/* Class For The TriangleWave Music Visualisation */
 function TriangleWave(){
+
+    //Set the Name of Visulisation
     this.name = "Triangle Wave";
 
+    /*************************************************
+    Menu Item for Selection of Visulaisation
+    *************************************************/
     this.musicVisualelement = createA("#", "Triangle Wave");
     this.musicVisualelement.parent('demos');
     this.musicVisualelement.addClass('demo');
+    this.musicVisualelement.attribute("onclick", "switchVis('Triangle Wave')");
 
+     /**** Visualisation Theme Color Pallete Array ********/
     this.colorPalette = ["#02073c", "#5b0ff5", "#f50fac", "#f50fac"];
+
+    /**** Variable for Setting the Background Theme *********/
     this.musicBody = select('#music-body');
-
-    this.analyzer = new p5.Amplitude();
-
-
     this.musicBodyColor = this.colorPalette[1];
 
-    this.draw = function(){
+    /* Amplitude measures volume between 0.0 and 1.0. Listens to all p5sound by default */
+    this.analyzer = new p5.Amplitude();
 
-        // this.musicBody.style('color', this.colorPalette[1]);
-        // this.musicVisualelement.style('color', "#fff")
+    /* Class Function for Drawing Visualisation */
+    this.draw = function(){
 
         background(this.colorPalette[0]);
     
@@ -81,6 +88,7 @@ function TriangleWave(){
 
     }
 
+    //Function for drawing the polygon using vertex
     function polygon(x, y, radius, npoints) {
         var angle = TWO_PI / npoints;
         beginShape();

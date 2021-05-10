@@ -1,22 +1,32 @@
+/* Class For The MusicVisualLine Music Visualisation */
 function MusicVisualLine(){
 
+    //Set the Name of Visulisation
     this.name = "MusicVisualLine";
+
+    /*************************************************
+    Menu Item for Selection of Visulaisation
+    *************************************************/
     this.musicVisualelement = createA("#", "MusicVisualLine");
     this.musicVisualelement.parent('demos');
     this.musicVisualelement.addClass('demo');
+    this.musicVisualelement.attribute("onclick", "switchVis('MusicVisualLine')");
+
+    /**** Visualisation Theme Color Pallete Array ********/
     this.colorPalette = ["#000", "rgba(22, 59, 72, 0.5)", "#00a6e0", "#002a38"];
+
+    /**** Variable for Setting the Background Theme *********/
     this.musicBody = select('#music-body');
+    this.musicBodyColor = "#2376a5";
+
+    /* Local Variable for Drawing Shapes of Lines */
     let pieces;
     let radius;
    
 
-
-    this.musicBodyColor = "#2376a5";
-
+    /* Class Function for Drawing Visualisation */
     this.draw = function(){
-
-        // this.musicBody.style('color', "#2376a5");
-        // this.musicVisualelement.style('color', "#fff")
+        
         background(this.colorPalette[0]);
 
         noFill();

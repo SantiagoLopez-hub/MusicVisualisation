@@ -1,18 +1,22 @@
-
-
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:400');
 
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:500);
 
-
+/* Root Style */
 *,
 *::after,
 *::before {
 	box-sizing: border-box;
 }
 
+/* Html Style */
+html{
+	scroll-behavior: smooth;
+}
+
+
+/* BODY */
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
@@ -53,7 +57,9 @@ a:focus {
 	fill: currentColor;
 }
 
-/* Header */
+/*******************************************************
+HEADER START
+*******************************************************/
 .codrops-header {
 	position: absolute;
 	left: 0;
@@ -66,6 +72,7 @@ a:focus {
 	padding: 2vmax;
 	z-index: 1;
 }
+
 
 .codrops-header__title {
 	font-size: 1.5em;
@@ -108,13 +115,22 @@ a:focus {
 	color: #fff;
 }
 
-/* Content */
+/*******************************************************
+HEADER STOP
+*******************************************************/
+
+
+
+
+/*******************************************************
+MAIN CONTENT START
+*******************************************************/
 .content {
 	padding: 3em 0;
 }
 
 .content.main {
-	min-height: 100vh; 
+	min-height: 100vh;
 	padding: 0;
 }
 
@@ -131,7 +147,7 @@ canvas {
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	width: 100%;
-	height: 100%; 
+	height: 100%;
 }
 
 .p5_loading {
@@ -151,7 +167,7 @@ canvas {
 	left: 50%;
 	top: 50%;
 	-webkit-transform: translate3d(-50%, -50%, 0);
-	transform: translate3d(-50%, -50%, 0);  
+	transform: translate3d(-50%, -50%, 0);
 	display: flex;
 }
 
@@ -179,15 +195,13 @@ canvas {
 		transform: scale(0);
 		background: rgb(255, 255, 255);
 	}
-	
+
 	to {
 		transform: scale(1);
 		background: rgb(0, 0, 0);
-		
+
 	}
 }
-
-
 
 #uploading-animation {
 	display: none;
@@ -197,7 +211,14 @@ canvas {
 	display: block;
 	z-index: 150;
 }
+/*******************************************************
+MAIN CONTENT END
+*******************************************************/
 
+
+/*******************************************************
+CONTROLLING BUTTONS START
+*******************************************************/
 .upload-btn::before,
 .toggle-btn {
 	padding: 10px;
@@ -206,14 +227,14 @@ canvas {
 	letter-spacing: 0.1em;
 	color: currentColor;
 	position: absolute;
-	bottom: 2vmax;   
+	bottom: 2vmax;
 	border: 1px solid;
 	width: 255px;
 }
 
 .upload-btn::before {
 	content: 'Upload your track';
-	display: inline-block;  
+	display: inline-block;
 	left: 2vmax;
 	outline: none;
 	white-space: nowrap;
@@ -244,9 +265,9 @@ canvas {
 	cursor: pointer;
 }
 
-.musicVol{
+.musicVol {
 	/* position: absolute; */
-    /* bottom: 2vmax; */
+	/* bottom: 2vmax; */
 	padding: 10px;
 	color: currentColor;
 	position: absolute;
@@ -259,13 +280,18 @@ canvas {
 	display: block;
 }
 
+/*******************************************************
+CONTROLLING BUTTONS END
+*******************************************************/
 
 
 
-
-/* Search OverLay */
+/*******************************************************
+SERACH OVERLAY POPUP BODY
+*******************************************************/
 
 .overlay {
+
 	height: 100%;
 	width: 100%;
 	display: none;
@@ -273,44 +299,45 @@ canvas {
 	z-index: 100;
 	background-color: rgba(0, 0, 0, 0.678);
 
-  }
+}
 
-  .overlay-content {
+.overlay-content {
 	position: relative;
-	top: 46%;
+	top: 10%;
 	width: 50%;
 	text-align: center;
 	margin-top: 30px;
 	margin: auto;
-  }
-  
-  .overlay .closebtn {
+}
+
+
+.overlay .closebtn {
 	position: absolute;
 	top: 20px;
 	right: 45px;
 	font-size: 60px;
 	cursor: pointer;
 	color: white;
-  }
-  
-  .overlay .closebtn:hover {
+}
+
+.overlay .closebtn:hover {
 	color: #ccc;
-  }
-  
-  .overlay input[type=text] {
+}
+
+.overlay input[type=text] {
 	padding: 15px;
 	font-size: 17px;
 	border: none;
 	float: left;
 	width: 80%;
 	background: white;
-  }
-  
-  .overlay input[type=text]:hover {
+}
+
+.overlay input[type=text]:hover {
 	background: #f1f1f1;
-  }
-  
-  .overlay button {
+}
+
+.overlay button {
 	float: left;
 	width: 20%;
 	padding: 15px;
@@ -318,12 +345,205 @@ canvas {
 	font-size: 17px;
 	border: none;
 	cursor: pointer;
+}
+
+.overlay button:hover {
+	background: #bbb;
+}
+
+#myOverlay #songsList {
+	position: relative;
+	top: 14%;
+	width: 90%;
+	text-align: center;
+	right: 0;
+	left: 7%;
+}
+
+#myOverlay #songsList h5 {
+	font-size: 1rem;
+}
+/*******************************************************
+SERACH OVERLAY POPUP BODY END
+*******************************************************/
+
+
+
+
+/*******************************************************
+SERACH SONGS CONTENT START
+*******************************************************/
+.search-title{
+	width: 50%;
+}
+
+/* Float four columns side by side */
+.column {
+	float: left;
+	width: 20%;
+	padding: 0 10px;
   }
   
-  .overlay button:hover {
-	background: #bbb;
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+	.column {
+	  width: 100%;
+	  display: block;
+	  margin-bottom: 20px;
+	}
+  }
+  
+  /* Style the counter cards */
+  .card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 16px;
+	text-align: center;
+	/* background-color: #f1f1f1; */
   }
 
+
+/* .songs-list{
+	position: relative;
+	top: 10%;
+	width: 50%;
+	text-align: center;
+	margin-top: 30px;
+	margin: auto;
+} */
+
+.result-songs {
+	/* background: var(--colour-body-background);
+	font-family: Bitter;
+	padding: calc(var(--base-grid)*10); */
+
+	width: 70%;
+	left: 15%;
+	right: 15%;
+}
+
+.result-songs ul {
+	display: flex;
+	list-style-type: none;
+}
+
+.result-songs ul li{
+	margin: 5px;
+}
+
+
+@keyframes wave {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+.music-card {
+	background: #fff;
+	box-shadow: 9px 7px 37px -6px rgba(0, 0, 0, 0.75);
+	overflow: hidden;
+	position: relative;
+	width: 185px;
+	height: 270px;
+}
+
+.image {
+	background: url('../assets/c1.jpg') no-repeat 75%;
+	background-size: cover;
+	position: absolute;
+	z-index: 1;
+	/* opacity: 1; */
+	height: 185px;
+	width: 185px;
+}
+
+.image:after {
+	height: 100px;
+	content: '';
+	top: 200px;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	background: linear-gradient(rgba(9, 2, 4, 0), #444);
+}
+
+.image:hover{
+	background: #000;
+}
+
+.info {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.title {
+	font-size: 1.4em;
+	font-weight: 400;
+	color: #333;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+	font-family: 'Reem Kufi', sans-serif;
+}
+
+.artist {
+	color: #cfcfcf;
+	font-size: 1.2em;
+	letter-spacing: 0.08em;
+	font-family: 'Reem Kufi', sans-serif;
+}
+
+ .music-card .fa {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	font-size: 18px;
+	cursor: pointer;
+	color: rgb(0, 0, 0);
+	z-index: 10000;
+}
+
+.music-card .fa:hover {
+	color: inherit;
+}
+
+.music-card a{
+	cursor: pointer;
+}
+
+.playButton{
+	background: transparent;
+    z-index: 2000000;
+    position: absolute;
+	display: block;
+}
+.pauseButton{
+	background: transparent;
+    z-index: 2000000;
+    position: absolute;
+	display: none;
+}
+
+/*******************************************************
+SERACH SONGS CONTENT END
+*******************************************************/
 
 
 
@@ -335,23 +555,27 @@ canvas {
 		justify-content: center;
 		text-align: center;
 	}
+
 	.demos {
 		width: 100%;
 		margin: 1em 0 0;
 		text-align: center;
 	}
+
 	.toggle-btn {
 		right: 10px;
 		bottom: 5.5em;
 		width: calc(100% - 20px);
 	}
+
 	.upload-btn::before {
 		position: absolute;
 		bottom: 9em;
 		left: 10px;
 		width: calc(100% - 20px);
 	}
-	.musicVol{
+
+	.musicVol {
 		left: 20%;
 		width: 60%;
 	}
@@ -361,7 +585,28 @@ canvas {
 		cursor: pointer;
 	}
 
+	.overlay {
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.616);
+	}
+	.overlay-content {
+		width: 100%;
+		padding: 10px;
+	}
+	.overlay input[type=text]{
+		color: #333;
+	}
+}
 
+@media screen and (max-width: 400px){
+	
+	.searchButton {
+		margin-left: 0;
+		cursor: pointer;
+	}
 
 	.overlay {
 		height: 100%;
@@ -370,8 +615,21 @@ canvas {
 		left: 0;
 		background-color: rgba(0, 0, 0, 0.616);
 	}
-}
 
+	.overlay-content {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.overlay input[type=text] {
+		color: #333;
+	}
+
+	.search-title {
+		width: 100%;
+	}
+	
+}
 
 @media screen and (max-width: 430px) {
 	.demos {
@@ -380,19 +638,30 @@ canvas {
 		text-align: center;
 		display: inline-grid;
 	}
-	.musicVol{
+
+	.musicVol {
 		left: 20%;
 		width: 60%;
 	}
+
+	
+
 }
 
 @media(min-width: 880px) {
-	
-	.musicVol{
+
+	.musicVol {
 		left: 40%;
 		width: 20%;
 	}
-	
+	.overlay-content {
+		width: 50%;
+		padding: 10px;
+	}
+	.overlay input[type=text]{
+		color: #333;
+	}
+
 }
 
 
@@ -400,57 +669,6 @@ canvas {
 
 
 
-
-
-
-#player {
-	width: 350px;
-	height: 50px;
-	position: relative;
-	margin: 0 auto;
-	top: 80px;
-}
-#player i {
-	position: absolute;
-	margin-top: -6px;
-	color: #666;
-}
-#player i.fa-volume-down {
-	margin-left: -8px;
-}
-#player i.fa-volume-up {
-	margin-right: -8px;
-	right: 0;
-}
-#volume {
-	position: absolute;
-	left: 24px;
-	margin: 0 auto;
-	height: 5px;
-	width: 300px;
-	background: #555;
-	border-radius: 15px;
-}
-#volume .ui-slider-range-min {
-	height: 5px;
-	width: 300px;
-	position: absolute;
-	background: #2ecc71;
-	border: none;
-	border-radius: 10px;
-	outline: none;
-}
-#volume .ui-slider-handle {
-	width: 20px;
-	height: 20px;
-	border-radius: 20px;
-	background: #fff;
-	position: absolute;
-	margin-left: -8px;
-	margin-top: -8px;
-	cursor: pointer;
-	outline: none;
-}
 
 
 
