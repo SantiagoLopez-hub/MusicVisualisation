@@ -51,7 +51,7 @@ loading of external files in a blocking way.
 */
 function preload() {
 	//Load the sound file assets into to audio set Function for 
-	audio = loadSound("audio/marathisong.mp3", function () {
+	audio = loadSound('audio/stomper_reggae_bit.mp3', function () {
 		loadedSound = true;
 	});
 }
