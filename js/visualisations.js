@@ -21,6 +21,7 @@ function Visualisations(){
     }
 
     //select a visualisation using it name property
+    // Changing the Theme of visusation according to current theme pallete 
 	//@param visName: name property of the visualisation
     this.selectedVisual = function(visName){
         for(var i = 0; i < this.visuals.length; i++){

@@ -1,28 +1,29 @@
+/* Class For The RectParticleVis Music Visualisation */
 function RectParticleVis(){
 
+    //Set the Name of Visulisation
     this.name = "Rectangle Partcles";
+
+    /*************************************************
+    Menu Item for Selection of Visulaisation
+    *************************************************/
     this.musicVisualelement = createA("#", "Rectangle Partcles");
     this.musicVisualelement.parent('demos');
     this.musicVisualelement.addClass('demo');
-    //this.musicVisualelement.mousePressed();
+    this.musicVisualelement.attribute("onclick", "switchVis('Rectangle Partcles')");
+
+    /**** Visualisation Theme Color Pallete Array ********/
     this.colorPalette = ["#676767", "#232D22", "#C1C1C2", "#FFF903"];
+
+    /**** Variable for Setting the Background Theme *********/
     this.musicBody = select('#music-body');
-   
-
-    this.analyzer = new p5.Amplitude();
-
-
-    this.selectedVis = false;
-
-
     this.musicBodyColor = "#ffeb3b";
 
+    /* Amplitude measures volume between 0.0 and 1.0. Listens to all p5sound by default */
+    this.analyzer = new p5.Amplitude();
+
+    /* Class Function for Drawing Visualisation */
     this.draw = function(){
-
-        // this.musicBody.style('color', "#ffeb3b");
-        // this.musicVisualelement.style('color', "#fff")
-
-
         background(this.colorPalette[0]);
         translate(windowWidth / 2, windowHeight / 2);
 

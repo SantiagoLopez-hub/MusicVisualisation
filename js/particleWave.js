@@ -1,30 +1,33 @@
+/* Class For The ParticleWave Music Visualisation */
 function ParticleWave(){
 
+    //Set the Name of Visulisation
     this.name = "Particle Wave";
+
+    /*************************************************
+    Menu Item for Selection of Visulaisation
+    *************************************************/
     this.musicVisualelement = createA("#", "Particle Wave");
     this.musicVisualelement.parent('demos');
     this.musicVisualelement.addClass('demo');
-    //this.musicVisualelement.mousePressed();
+    this.musicVisualelement.attribute("onclick", "switchVis('Particle Wave')");
+
+    /**** Visualisation Theme Color Pallete Array ********/
     this.colorPalette = ["#0f0639", "#ff006a", "#ff4f00", "#00f9d9"];
-    this.musicBody = select('#music-body');
-    this.selectedVis = false;
-
-
-
     this.bgColor = "#0c0f27";
     this.bassColor = ["#313e9b", "#1200b3"];
     this.midColor = "#da1500";
     this.trembleColor = "#728d0d";
+
+    /**** Variable for Setting the Background Theme *********/
+    this.musicBody = select('#music-body');
+    this.musicBodyColor = "#1d3cbb";
+
+    //Local Variable for calculate Radius Space    
     let radius;
 
-
-
-    this.musicBodyColor = "#1d3cbb";
-    
+    /* Class Function for Drawing Visualisation */
     this.draw = function(){
-
-        // this.musicBody.style('color', "#1d3cbb");
-        // this.musicVisualelement.style('color', "#fff")
 
 
         background(this.bgColor);
