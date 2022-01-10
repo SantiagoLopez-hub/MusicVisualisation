@@ -5,7 +5,7 @@ function MusicVisualLine(){
     this.name = "MusicVisualLine";
 
     /*************************************************
-    Menu Item for Selection of Visulaisation
+    Menu Item for Selection of Visualisation
     *************************************************/
     this.musicVisualelement = createA("#", "MusicVisualLine");
     this.musicVisualelement.parent('demos');
@@ -83,7 +83,7 @@ function MusicVisualLine(){
             pop();
 
 
-            /*----------  TREMBLE  ----------*/
+            /*----------  TREBLE  ----------*/
             push();
             stroke(this.colorPalette[3]);
             scale(scaleTreble);

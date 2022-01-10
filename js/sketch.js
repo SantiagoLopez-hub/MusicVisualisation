@@ -1,6 +1,4 @@
-
-
-//Variaable for loading animation control
+//Variable for loading animation control
 let uploadLoading = false;
 
 let loadedSound = false;
@@ -108,7 +106,7 @@ function setup() {
 	vis.add(new MusicVisualCircle());
 	vis.add(new MusicVisualLine());
 	vis.add(new ParticleWave());
-	vis.add(new RectParticleVis());
+	vis.add(new RectParticle());
 	vis.add(new BubblePattern());
 	vis.add(new TriangleWave());
 	/******* Store Visualisation to visual object END *******/
@@ -151,7 +149,7 @@ function draw() {
 		uploadAnim.removeClass('is-visible');
 	}
 
-	//Draw Music Visulaations
+	//Draw Music Visualisations
 	vis.currentVisual.draw();
 	//Draw Controls
 	controls.draw();
@@ -229,8 +227,6 @@ The keyCode for the key that was pressed is stored in the keyCode variable.
 function keyPressed() {
 	controls.keyPressed(keyCode);
 }
-
-
 
 
 /*

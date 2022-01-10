@@ -1,16 +1,16 @@
 /* Class For The RectParticleVis Music Visualisation */
-function RectParticleVis(){
+function RectParticle(){
 
     //Set the Name of Visulisation
-    this.name = "Rectangle Partcles";
+    this.name = "Rectangle Particles";
 
     /*************************************************
-    Menu Item for Selection of Visulaisation
+    Menu Item for Selection of Visualisation
     *************************************************/
-    this.musicVisualelement = createA("#", "Rectangle Partcles");
+    this.musicVisualelement = createA("#", "Rectangle Particles");
     this.musicVisualelement.parent('demos');
     this.musicVisualelement.addClass('demo');
-    this.musicVisualelement.attribute("onclick", "switchVis('Rectangle Partcles')");
+    this.musicVisualelement.attribute("onclick", "switchVis('Rectangle Particles')");
 
     /**** Visualisation Theme Color Pallete Array ********/
     this.colorPalette = ["#676767", "#232D22", "#C1C1C2", "#FFF903"];
@@ -86,7 +86,7 @@ function RectParticleVis(){
             }
 
 
-            /*----------  TREMBLE  ----------*/
+            /*----------  TREBLE  ----------*/
             for (var j = 5; j < treble; j += 20) {
 
                 var angleT = j * 3 * random();
@@ -107,7 +107,3 @@ function RectParticleVis(){
 
     }
 }
-
-
-
-

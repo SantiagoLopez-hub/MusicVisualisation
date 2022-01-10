@@ -5,7 +5,7 @@ function BubblePattern(){
     this.name = "Bubbles Pattern";
 
     /*************************************************
-    Menu Item for Selection of Visulaisation
+    Menu Item for Selection of Visualisation
     *************************************************/
     this.musicVisualelement = createA("#", this.name);
     this.musicVisualelement.parent('demos');

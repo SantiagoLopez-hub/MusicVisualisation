@@ -5,7 +5,7 @@ function ParticleWave(){
     this.name = "Particle Wave";
 
     /*************************************************
-    Menu Item for Selection of Visulaisation
+    Menu Item for Selection of Visualisation
     *************************************************/
     this.musicVisualelement = createA("#", "Particle Wave");
     this.musicVisualelement.parent('demos');
@@ -28,8 +28,6 @@ function ParticleWave(){
 
     /* Class Function for Drawing Visualisation */
     this.draw = function(){
-
-
         background(this.bgColor);
         strokeWeight(1);
 
@@ -87,7 +85,7 @@ function ParticleWave(){
             pop();
 
 
-            /*----------  TREMBLE  ----------*/
+            /*----------  TREBLE  ----------*/
             push();
             stroke(this.trembleColor);
             strokeWeight(4);

@@ -1,89 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Music Visualisers</title>
+		<meta name="description" content="Music visualisations by Rahul Mohite & Santiago Lopez" />
+		<meta name="keywords" content="visualizers, music, javascript, upload, music, line, web design" />
+		<meta name="author" content="Rahul Mohite" />
+		<meta name="image" content="/assets/descimg.png" />
+		<meta property="og:title" content="Music Visualisers">
+		<meta property="og:description" content="Music visualisations by Rahul Mohite & Santiago Lopez">
+		<meta property="og:image" content="/assets/descimg.png">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			document.documentElement.className = 'js';
+		</script>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Music Visualizers</title>
-	<meta name="description" content="This is the Computing Project of Music visualisations by Rahul Mohite & Santiago Lopez" />
-	<meta name="keywords" content="visualizers, music, javascript, upload, music, line, web design" />
-	<meta name="author" content="Rahul Mohite" />
-	<meta name="image" content="/assets/descimg.png" />
-	<meta property="og:title" content="Computing Project Music Visualizers">
-	<meta property="og:description" content="This is the Computing Project of Music visualisations by Rahul Mohite & Santiago Lopez">
-	<meta property="og:image" content="/assets/descimg.png">
-	<meta property="og:url" content="https://www.doc.gold.ac.uk/~rmohi002/computingproject/">
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		document.documentElement.className = 'js';
-	</script>
-</head>
+	<body id="music-body">
 
-<body id="music-body">
-
-	<!-- Overlay COntainer For Searching Songs START  -->
-	<div id="myOverlay" class="overlay">
-		<span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-		<!-- Search Song Form START -->
-		<div class="overlay-content" id="searchform">
-			<form>
-			</form>
-		</div>
-		<!-- Search Song Form END -->
-
-		<!-- SONGS CARD START -->
-		<div id="songsList">
-			<div class="search-title" id="search-title">
+		<!-- Overlay COntainer For Searching Songs START  -->
+		<div id="myOverlay" class="overlay">
+			<span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+			<!-- Search Song Form START -->
+			<div class="overlay-content" id="searchform">
+				<form>
+				</form>
 			</div>
-			<div class="row" id="songs-row">
-			</div>
-		</div>
-		<!-- SONGS CARD END -->
+			<!-- Search Song Form END -->
 
-	</div>
-	<!-- Overlay COntainer For Searching Songs END  -->
-	<main class="site-wrapper">
-		<!-- MENU HEADER START -->
-		<header class="codrops-header" id="header">
-			<h1 class="codrops-header__title">Computing Project Music Visualizers</h1>
-			<nav class="demos" id="demos">
-			</nav>
-		</header>
-		<!-- MENU HEADER END -->
-
-		<!-- MAIN CONTENT START -->
-		<div class="content main">
-			<div class="canvas-wrapper">
-				<div id="p5_loading" class="p5_loading">
-					<div class="p5_loading__inner">
-						<span></span>
-					</div>
+			<!-- SONGS CARD START -->
+			<div id="songsList">
+				<div class="search-title" id="search-title">
 				</div>
-				<div id="uploading-animation" class="p5_loading">
-					<div class="p5_loading__inner">
-						<span></span>
-					</div>
+				<div class="row" id="songs-row">
 				</div>
-				<canvas id="webglcanvas"></canvas>
 			</div>
-		</div>
-		<!-- MAIN CONTENT END -->
-	</main>
-	<script src="lib/p5.min.js"></script>
-	<script src="lib/p5.sound.min.js"></script>
-	<script src="js/sketch.js"></script>
-	<script src="js/musicVisualLine.js"></script>
-	<script src="js/musicVisualiCircle.js"></script>
-	<script src="js/particleWave.js"></script>
-	<script src="js/rectParticles.js"></script>
-	<script src="js/triangleWave.js"></script>
-	<script src="js/bubblePattern.js"></script>
-	<script src="js/visualisations.js"></script>
-	<script src="js/controlsAndInput.js"></script>
-</body>
+			<!-- SONGS CARD END -->
 
+		</div>
+		<!-- Overlay COntainer For Searching Songs END  -->
+		<main class="site-wrapper">
+			<!-- MENU HEADER START -->
+			<header class="codrops-header" id="header">
+				<h1 class="codrops-header__title">Music Visualisers</h1>
+				<nav class="demos" id="demos">
+				</nav>
+			</header>
+			<!-- MENU HEADER END -->
+
+			<!-- MAIN CONTENT START -->
+			<div class="content main">
+				<div class="canvas-wrapper">
+					<div id="p5_loading" class="p5_loading">
+						<div class="p5_loading__inner">
+							<span></span>
+						</div>
+					</div>
+					<div id="uploading-animation" class="p5_loading">
+						<div class="p5_loading__inner">
+							<span></span>
+						</div>
+					</div>
+					<canvas id="webglcanvas"></canvas>
+				</div>
+			</div>
+			<!-- MAIN CONTENT END -->
+		</main>
+		<script src="lib/p5.min.js"></script>
+		<script src="lib/p5.sound.min.js"></script>
+		<script src="js/sketch.js"></script>
+		<script src="js/musicVisualLine.js"></script>
+		<script src="js/musicVisualiCircle.js"></script>
+		<script src="js/particleWave.js"></script>
+		<script src="js/rectParticles.js"></script>
+		<script src="js/triangleWave.js"></script>
+		<script src="js/bubblePattern.js"></script>
+		<script src="js/visualisations.js"></script>
+		<script src="js/controlsAndInput.js"></script>
+	</body>
 </html>

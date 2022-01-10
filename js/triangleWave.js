@@ -5,7 +5,7 @@ function TriangleWave(){
     this.name = "Triangle Wave";
 
     /*************************************************
-    Menu Item for Selection of Visulaisation
+    Menu Item for Selection of Visualisation
     *************************************************/
     this.musicVisualelement = createA("#", "Triangle Wave");
     this.musicVisualelement.parent('demos');
@@ -75,7 +75,7 @@ function TriangleWave(){
             pop();
     
     
-            /*----------  TREMBLE  ----------*/
+            /*----------  TREBLE  ----------*/
             push();
             stroke(this.colorPalette[3]);
             strokeWeight(0.6);

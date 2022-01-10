@@ -5,7 +5,7 @@ function MusicVisualCircle() {
     this.name = "MusicVisualCircle";
 
     /*************************************************
-    Menu Item for Selection of Visulaisation
+    Menu Item for Selection of Visualisation
     *************************************************/
     this.musicVisualelement = createA("#", "MusicVisualCircle");
     this.musicVisualelement.parent('demos');
@@ -86,7 +86,7 @@ function MusicVisualCircle() {
             pop();
 
 
-            /*----------  TREMBLE  ----------*/
+            /*----------  TREBLE  ----------*/
             push();
             stroke(this.colorPalette[3]);
             scale(scaleTreble);
